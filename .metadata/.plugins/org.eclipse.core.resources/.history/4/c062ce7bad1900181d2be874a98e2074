@@ -1,0 +1,14 @@
+/*
+ * Hello.c
+ *
+ *  Created on: 24 feb 2018
+ *      Author: Asus
+ */
+
+#include <stdio.h>
+
+int main(void){
+	printf("Hello World");
+	return 0;
+}
+

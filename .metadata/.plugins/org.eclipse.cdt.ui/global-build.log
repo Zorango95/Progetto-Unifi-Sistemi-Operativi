@@ -1,0 +1,615 @@
+23:15:17 **** Incremental Build of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:289:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+23:15:23 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:15:23 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:15:28 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:289:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:17:08 **** Incremental Build of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:419:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:17:54 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:17:54 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:17:56 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:419:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:19:11 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:19:11 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:19:14 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:424:7: warning: unused variable 'ID_search' [-Wunused-variable]
+   int ID_search = -1;/*variabile che conterrà il l'id incerito da tastiera per cercare il task*/
+       ^~~~~~~~~
+..\src\Scheduler.c:423:7: warning: unused variable 'command' [-Wunused-variable]
+   int command = 0;/*variabile in cui salva il comando da eseguire,usato per non permettere altre operazioni esclusa quella  di inserimento e uscita dal programma nel      caso  in cui la lista dei task sia vuota*/
+       ^~~~~~~
+..\src\Scheduler.c:422:7: warning: unused variable 'comando' [-Wunused-variable]
+   int comando = 0;/*variabile in cui salva il comando da eseguire*/
+       ^~~~~~~
+..\src\Scheduler.c:419:22: warning: unused variable 'new_task' [-Wunused-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c:418:6: warning: unused variable 'autoincremental_task_ID' [-Wunused-variable]
+  int autoincremental_task_ID = 0;/*inizializzazione della variabile per l'ID  di una task*/
+      ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:19:52 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:19:52 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:19:56 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:425:7: warning: unused variable 'ID_search' [-Wunused-variable]
+   int ID_search = -1;/*variabile che conterrà il l'id incerito da tastiera per cercare il task*/
+       ^~~~~~~~~
+..\src\Scheduler.c:424:7: warning: unused variable 'command' [-Wunused-variable]
+   int command = 0;/*variabile in cui salva il comando da eseguire,usato per non permettere altre operazioni esclusa quella  di inserimento e uscita dal programma nel      caso  in cui la lista dei task sia vuota*/
+       ^~~~~~~
+..\src\Scheduler.c:423:7: warning: unused variable 'comando' [-Wunused-variable]
+   int comando = 0;/*variabile in cui salva il comando da eseguire*/
+       ^~~~~~~
+..\src\Scheduler.c:420:22: warning: unused variable 'new_task' [-Wunused-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c:419:6: warning: unused variable 'autoincremental_task_ID' [-Wunused-variable]
+  int autoincremental_task_ID = 0;/*inizializzazione della variabile per l'ID  di una task*/
+      ^~~~~~~~~~~~~~~~~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:21:07 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:21:07 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:21:09 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+Info: Nothing to build for Esercizio1
+23:23:12 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:23:13 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:23:18 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:28:4: warning: implicit declaration of function 'print_tasks_list' [-Wimplicit-function-declaration]
+    print_tasks_list();
+    ^~~~~~~~~~~~~~~~
+..\src\Scheduler.c:38:5: warning: implicit declaration of function 'stampa_menu' [-Wimplicit-function-declaration]
+     stampa_menu();
+     ^~~~~~~~~~~
+..\src\Scheduler.c:45:17: warning: implicit declaration of function 'insert_new_task' [-Wimplicit-function-declaration]
+      new_task = insert_new_task(autoincremental_task_ID);
+                 ^~~~~~~~~~~~~~~
+..\src\Scheduler.c:45:15: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+      new_task = insert_new_task(autoincremental_task_ID);
+               ^
+..\src\Scheduler.c:71:14: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     new_task = insert_new_task(autoincremental_task_ID);
+              ^
+..\src\Scheduler.c:76:5: warning: implicit declaration of function 'execute_tail' [-Wimplicit-function-declaration]
+     execute_tail();
+     ^~~~~~~~~~~~
+..\src\Scheduler.c:82:5: warning: implicit declaration of function 'execute_by_ID' [-Wimplicit-function-declaration]
+     execute_by_ID(ID_search);
+     ^~~~~~~~~~~~~
+..\src\Scheduler.c:88:5: warning: implicit declaration of function 'delete_by_ID' [-Wimplicit-function-declaration]
+     delete_by_ID(ID_search);
+     ^~~~~~~~~~~~
+..\src\Scheduler.c:95:5: warning: implicit declaration of function 'change_priority_by_ID' [-Wimplicit-function-declaration]
+     change_priority_by_ID(ID_search);
+     ^~~~~~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:99:5: warning: implicit declaration of function 'switch_scheduling' [-Wimplicit-function-declaration]
+     switch_scheduling();
+     ^~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:19:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:174:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:197:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:242:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: At top level:
+..\src\Scheduler.c:326:6: error: conflicting types for 'insert_new_task'
+ LIST insert_new_task(int x) {
+      ^~~~~~~~~~~~~~~
+..\src\Scheduler.c:45:17: note: previous implicit declaration of 'insert_new_task' was here
+      new_task = insert_new_task(autoincremental_task_ID);
+                 ^~~~~~~~~~~~~~~
+..\src\Scheduler.c:393:6: warning: conflicting types for 'delete_by_ID'
+ void delete_by_ID(int x) {
+      ^~~~~~~~~~~~
+..\src\Scheduler.c:88:5: note: previous implicit declaration of 'delete_by_ID' was here
+     delete_by_ID(ID_search);
+     ^~~~~~~~~~~~
+..\src\Scheduler.c:430:6: warning: conflicting types for 'execute_tail'
+ void execute_tail() {
+      ^~~~~~~~~~~~
+..\src\Scheduler.c:76:5: note: previous implicit declaration of 'execute_tail' was here
+     execute_tail();
+     ^~~~~~~~~~~~
+..\src\Scheduler.c:446:6: warning: conflicting types for 'execute_by_ID'
+ void execute_by_ID(int x) {
+      ^~~~~~~~~~~~~
+..\src\Scheduler.c:82:5: note: previous implicit declaration of 'execute_by_ID' was here
+     execute_by_ID(ID_search);
+     ^~~~~~~~~~~~~
+..\src\Scheduler.c:466:6: warning: conflicting types for 'change_priority_by_ID'
+ void change_priority_by_ID(int x) {
+      ^~~~~~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:95:5: note: previous implicit declaration of 'change_priority_by_ID' was here
+     change_priority_by_ID(ID_search);
+     ^~~~~~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:484:6: warning: conflicting types for 'switch_scheduling'
+ void switch_scheduling() {
+      ^~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:99:5: note: previous implicit declaration of 'switch_scheduling' was here
+     switch_scheduling();
+     ^~~~~~~~~~~~~~~~~
+..\src\Scheduler.c:497:6: warning: conflicting types for 'print_tasks_list'
+ void print_tasks_list() {
+      ^~~~~~~~~~~~~~~~
+..\src\Scheduler.c:28:4: note: previous implicit declaration of 'print_tasks_list' was here
+    print_tasks_list();
+    ^~~~~~~~~~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:364:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:389:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+23:24:21 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:24:21 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:24:23 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:75:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:98:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:143:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:419:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:265:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:290:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+23:31:27 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:31:27 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:34:28 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+C:/Users/Asus/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+23:34:28 **** Rebuild of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c:8:10: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h> /* Libreria che contiene opzioni di controllo della wait() */
+          ^~~~~~~~~~~~
+compilation terminated.
+23:34:40 **** Incremental Build of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+C:/Users/Asus/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+23:34:40 **** Incremental Build of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c: In function 'execution':
+..\src\Comand_Execution.c:21:5: warning: implicit declaration of function 'fork' [-Wimplicit-function-declaration]
+  if(fork() != 0){  /* Viene creato un processo figlio per ogni comando inserito*/
+     ^~~~
+..\src\Comand_Execution.c:25:4: warning: implicit declaration of function 'wait'; did you mean 'cwait'? [-Wimplicit-function-declaration]
+    wait(NULL);
+    ^~~~
+    cwait
+..\src\Comand_Execution.c:32:7: warning: unused variable 'fpid' [-Wunused-variable]
+   int fpid = getpid(); /* Restituisce l' ID del processo figlio del comando */
+       ^~~~
+..\src\Comand_Execution.c: At top level:
+..\src\Comand_Execution.c:238:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(){
+      ^~~~
+gcc -o Esercizio2.exe "src\\Comand_Execution.o" 
+src\Comand_Execution.o: In function `execution':
+C:\Users\Asus\Desktop\Mattia\Universit�\Progetti Universitari\Sistemi Operativi\Esercizio2\Debug/../src/Comand_Execution.c:21: undefined reference to `fork'
+C:\Users\Asus\Desktop\Mattia\Universit�\Progetti Universitari\Sistemi Operativi\Esercizio2\Debug/../src/Comand_Execution.c:25: undefined reference to `wait'
+collect2.exe: error: ld returned 1 exit status
+23:34:48 **** Incremental Build of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+C:/Users/Asus/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+23:34:49 **** Incremental Build of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c:8:10: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h> /* Libreria che contiene opzioni di controllo della wait() */
+          ^~~~~~~~~~~~
+compilation terminated.
+23:35:35 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:35:35 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:35:35 **** Clean-only build of configuration Debug for project Esercizio2 ****
+rm -rf src/Comand_Execution.o src/Comand_Execution.d Esercizio2.exe 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:35:35 **** Clean-only build of configuration Debug for project Esercizio2 ****
+23:35:36 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+C:/Users/Asus/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+23:35:37 **** Rebuild of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c:8:10: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h> /* Libreria che contiene opzioni di controllo della wait() */
+          ^~~~~~~~~~~~
+compilation terminated.
+23:38:18 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:38:18 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:38:18 **** Clean-only build of configuration Debug for project Esercizio2 ****
+rm -rf src/Comand_Execution.o src/Comand_Execution.d Esercizio2.exe 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:38:18 **** Clean-only build of configuration Debug for project Esercizio2 ****
+23:38:21 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+C:/Users/Asus/gcc/x86_64-w64-mingw32/lib/../lib/libmingw32.a(lib64_libmingw32_a-crt0_c.o):crt0_c.c:(.text.startup+0x2e): undefined reference to `WinMain'
+collect2.exe: error: ld returned 1 exit status
+23:38:21 **** Rebuild of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c:8:10: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h> /* Libreria che contiene opzioni di controllo della wait() */
+          ^~~~~~~~~~~~
+compilation terminated.
+23:38:21 **** Rebuild of configuration Debug for project Esercizio3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Server.o" "..\\src\\Server.c" 
+..\src\Server.c: In function 'get_interrupt':
+..\src\Server.c:27:4: warning: implicit declaration of function 'kill'; did you mean 'tell'? [-Wimplicit-function-declaration]
+    kill(client_vector[index].pid, SIGUSR2);
+    ^~~~
+    tell
+..\src\Server.c:27:35: error: 'SIGUSR2' undeclared (first use in this function); did you mean 'SIG_ERR'?
+    kill(client_vector[index].pid, SIGUSR2);
+                                   ^~~~~~~
+                                   SIG_ERR
+..\src\Server.c:27:35: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Server.c: In function 'print_client_vector':
+..\src\Server.c:75:25: warning: suggest parentheses around comparison in operand of '|' [-Wparentheses]
+   if(client_vector[i].p == 1 | client_vector[i].p == 2){
+      ~~~~~~~~~~~~~~~~~~~^~~~
+..\src\Server.c: In function 'new_connection':
+..\src\Server.c:101:2: warning: implicit declaration of function 'mknod' [-Wimplicit-function-declaration]
+  mknod(pipeName,S_IFIFO, 0);
+  ^~~~~
+..\src\Server.c: In function 'manage_msg':
+..\src\Server.c:260:37: error: 'SIGUSR1' undeclared (first use in this function); did you mean 'SIG_ERR'?
+    kill(client_vector[dest_id].pid, SIGUSR1);/*Invio del segnale SIGUSR1 al client destiatario. Questo segnale permetterà a tale client di aprire la pipe ad esso dedicata e leggere il messaggio che vi sarà inviato. */
+                                     ^~~~~~~
+                                     SIG_ERR
+..\src\Server.c: At top level:
+..\src\Server.c:286:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(){
+      ^~~~
+..\src\Server.c: In function 'send_client_list':
+..\src\Server.c:158:38: warning: 'sprintf' writing a terminating nul past the end of the destination [-Wformat-overflow=]
+    sprintf(SINGLE_CLIENT, "ID:|%d|.\n", i);
+                                      ^
+..\src\Server.c:158:4: note: 'sprintf' output between 9 and 19 bytes into a destination of size 8
+    sprintf(SINGLE_CLIENT, "ID:|%d|.\n", i);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+23:42:47 **** Clean-only build of configuration Debug for project Esercizio1 ****
+rm -rf src/Scheduler.d Esercizio1.exe src/Scheduler.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:42:49 **** Clean-only build of configuration Debug for project Esercizio1 ****
+23:42:49 **** Clean-only build of configuration Debug for project Esercizio2 ****
+rm -rf src/Comand_Execution.o src/Comand_Execution.d Esercizio2.exe 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:42:49 **** Clean-only build of configuration Debug for project Esercizio2 ****
+23:42:49 **** Clean-only build of configuration Debug for project Esercizio3 ****
+rm -rf Esercizio3.exe src/Client.o src/Server.d src/Server.o src/Client.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Users\Asus\gcc\bin;\bin;\usr\bin;C:/Program Files/Java/jre1.8.0_161/bin/server;C:/Program Files/Java/jre1.8.0_161/bin;C:/Program Files/Java/jre1.8.0_161/lib/amd64;C:\Users\Asus\gcc\bin;C:\Users\Asus\gcc\libexec\gcc\x86_64-w64-mingw32\7.2.0;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\MATLAB\R2017b\bin;C:\Users\Asus\AppData\Local\Microsoft\WindowsApps;;C:\Users\Asus\eclipse\java-latest-released\eclipse]
+
+23:42:49 **** Clean-only build of configuration Debug for project Esercizio3 ****
+23:42:55 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:78:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:103:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point -> next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:151:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point -> next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:433:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:279:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:306:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+23:42:55 **** Rebuild of configuration Debug for project Esercizio2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comand_Execution.o" "..\\src\\Comand_Execution.c" 
+..\src\Comand_Execution.c:8:10: fatal error: sys/wait.h: No such file or directory
+ #include <sys/wait.h> /* Libreria che contiene opzioni di controllo della wait() */
+          ^~~~~~~~~~~~
+compilation terminated.
+23:42:55 **** Rebuild of configuration Debug for project Esercizio3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.c" 
+..\src\Client.c: In function 'connessione':
+..\src\Client.c:32:9: warning: implicit declaration of function 'getpid'; did you mean 'getcwd'? [-Wimplicit-function-declaration]
+  name = getpid(); /*Associazione PID al nome del client.*/
+         ^~~~~~
+         getcwd
+..\src\Client.c: At top level:
+..\src\Client.c:202:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(){
+      ^~~~
+..\src\Client.c: In function 'main':
+..\src\Client.c:206:9: error: 'SIGUSR1' undeclared (first use in this function); did you mean 'SIG_ERR'?
+  signal(SIGUSR1, read_message);
+         ^~~~~~~
+         SIG_ERR
+..\src\Client.c:206:9: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Client.c:207:9: error: 'SIGUSR2' undeclared (first use in this function); did you mean 'SIGUSR1'?
+  signal(SIGUSR2, manage_server_crash);
+         ^~~~~~~
+         SIGUSR1

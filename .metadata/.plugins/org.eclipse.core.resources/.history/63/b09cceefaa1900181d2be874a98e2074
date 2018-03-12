@@ -1,0 +1,11 @@
+/*
+ * Hello.c
+ *
+ *  Created on: 24 feb 2018
+ *      Author: Asus
+ */
+
+int main(void){
+	print("Hello World");
+}
+

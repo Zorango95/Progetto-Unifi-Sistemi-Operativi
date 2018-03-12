@@ -1,0 +1,20 @@
+#include "struct.h" /*includiamo la libreria della struttura delle task*/
+#include<stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*VARIABILI GLOBALI*/
+typedef struct T_structure *LIST;/*crea un puntatore a lista utilizzato per lo switch dei task*/
+struct T_structure *head = NULL;/*puntatore che conterrà la testa dello scheduler*/
+struct T_structure *newhead = NULL;/*puntatore d'appoggio che conterrà la nuova testa*/
+struct T_structure *tail = NULL;/*puntatore che conterrà la coda dello scheduler*/
+int sch = 0; /*variabile con la quale specifico se l'ordinamento deve essere per esecuzioni rimaste o per priorità(di default)*/
+int n = 0;/*variabile con la quale il programma capisce che lo scheduler è vuoto*/
+
+/*FUNZIONE MAIN */
+
+int main(void) {
+
+	printf("Sti cazzo");
+}
+

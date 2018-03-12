@@ -1,0 +1,25 @@
+23:42:55 **** Rebuild of configuration Debug for project Esercizio3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Client.o" "..\\src\\Client.c" 
+..\src\Client.c: In function 'connessione':
+..\src\Client.c:32:9: warning: implicit declaration of function 'getpid'; did you mean 'getcwd'? [-Wimplicit-function-declaration]
+  name = getpid(); /*Associazione PID al nome del client.*/
+         ^~~~~~
+         getcwd
+..\src\Client.c: At top level:
+..\src\Client.c:202:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main(){
+      ^~~~
+..\src\Client.c: In function 'main':
+..\src\Client.c:206:9: error: 'SIGUSR1' undeclared (first use in this function); did you mean 'SIG_ERR'?
+  signal(SIGUSR1, read_message);
+         ^~~~~~~
+         SIG_ERR
+..\src\Client.c:206:9: note: each undeclared identifier is reported only once for each function it appears in
+..\src\Client.c:207:9: error: 'SIGUSR2' undeclared (first use in this function); did you mean 'SIGUSR1'?
+  signal(SIGUSR2, manage_server_crash);
+         ^~~~~~~
+         SIGUSR1
+
+23:42:55 Build Finished (took 160ms)
+

@@ -1,0 +1,90 @@
+int main(void) {
+	int autoincremental_task_ID = 0;/*inizializzazione della variabile per l'ID  di una task*/
+	struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+	while (1) {
+		int comando = 0;/*variabile in cui salva il comando da eseguire*/
+		int command = 0;/*variabile in cui salva il comando da eseguire,usato per non permettere altre operazioni esclusa quella  di inserimento e uscita dal programma nel 					caso  in cui la lista dei task sia vuota*/
+		int ID_search = -1;/*variabile che conterrà il l'id incerito da tastiera per cercare il task*/
+
+		if (head != NULL) {/*verifica che la testa sia diversa da 'NULL' condizione in cui lo scheduler è vuoto*/
+			n = 1;
+			print_tasks_list();
+
+		} else {
+			n = 0;
+		}
+
+		if (n == 0) {/* controlla se lo scheduler sia vuoto*/
+
+			do {
+				printf("\n Scegli un'operazione: \n");
+				stampa_menu();
+				printf("Inserire un intero corrispondente alle precedenti:\n");
+				scanf("%1d", &command);/*riceve dal tastiera l'esecuzione che dovrà esser eseguita*/
+				getchar();/*attesa che l'utente inserisca un carattere da tastiera*/
+				if (command == 1) {
+					printf("sono nel new task\n");
+					n = 1;
+					new_task = insert_new_task(autoincremental_task_ID);
+					autoincremental_task_ID += 1; /* new_task non serve più, quindi insert_task può tornare void*/
+				} else if (command == 7) {
+					printf("Esco dal programma.\n");
+					exit(1);
+				} else if (command > 1 && command < 7) {
+					printf("operazione non valida, non ci sono task in memoria.\n\n");
+				} else {
+					printf("Inserimento errato. Riprova.\n\n");
+				}
+			} while (n != 1);
+		} else {
+			printf("\n Scegli un'operazione:\n");
+			stampa_menu();
+			printf("Inserire un intero corrispondente alle precedenti:\n");
+			scanf("%1d", &comando);/*riceve dal tastiera l'esecuzione che dovrà esser eseguita*/
+			getchar();/*attesa che l'utente inserisca un carattere da tastiera*/
+			switch (comando) {
+
+			case 1:
+				new_task = insert_new_task(autoincremental_task_ID);
+				autoincremental_task_ID += 1; /* new_task non serve più, quindi insert_task può tornare void*/
+				break;
+
+			case 2:
+				execute_tail();
+				break;
+
+			case 3:
+				printf("Inserire l'ID del task da eseguire.\n");
+				scanf("%d", &ID_search);
+				execute_by_ID(ID_search);
+				break;
+
+			case 4:
+				printf("Inserire l'ID del task da eliminare.\n");
+				scanf("%d", &ID_search);
+				delete_by_ID(ID_search);
+				break;
+
+			case 5:
+				printf(
+						"Inserire l'ID del task del quale si desidera cambiare la priorita'.\n");
+				scanf("%d", &ID_search);
+				change_priority_by_ID(ID_search);
+				break;
+
+			case 6:
+				switch_scheduling();
+				break;
+
+			case 7:
+				printf("Esco dal programma.\n");
+				exit(1);
+				break;
+			default:
+				printf("Inserimento errato. Riprova.\n");
+			}
+		}
+	}
+
+}
+

@@ -1,0 +1,31 @@
+23:42:55 **** Rebuild of configuration Debug for project Esercizio1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c11 -o "src\\Scheduler.o" "..\\src\\Scheduler.c" 
+..\src\Scheduler.c: In function 'switch_two':
+..\src\Scheduler.c:78:8: warning: unused variable 'x' [-Wunused-variable]
+   LIST x = a;
+        ^
+..\src\Scheduler.c: In function 'minimo_execution':
+..\src\Scheduler.c:103:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point -> next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'massima_priority':
+..\src\Scheduler.c:151:7: warning: variable 'succ' set but not used [-Wunused-but-set-variable]
+  LIST succ = point -> next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+       ^~~~
+..\src\Scheduler.c: In function 'main':
+..\src\Scheduler.c:433:22: warning: variable 'new_task' set but not used [-Wunused-but-set-variable]
+  struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+                      ^~~~~~~~
+..\src\Scheduler.c: In function 'insert_new_task':
+..\src\Scheduler.c:279:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+..\src\Scheduler.c: In function 'find_task_by_ID':
+..\src\Scheduler.c:306:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -o Esercizio1.exe "src\\Scheduler.o" 
+
+23:42:55 Build Finished (took 407ms)
+

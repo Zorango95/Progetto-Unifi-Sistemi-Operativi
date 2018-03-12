@@ -1,0 +1,512 @@
+#include "struct.h" /*includiamo la libreria della struttura delle task*/
+#include<stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+/*VARIABILI GLOBALI*/
+typedef struct T_structure *LIST;/*crea un puntatore a lista utilizzato per lo switch dei task*/
+struct T_structure *head = NULL;/*puntatore che conterrà la testa dello scheduler*/
+struct T_structure *newhead = NULL;/*puntatore d'appoggio che conterrà la nuova testa*/
+struct T_structure *tail = NULL;/*puntatore che conterrà la coda dello scheduler*/
+int sch = 0; /*variabile con la quale specifico se l'ordinamento deve essere per esecuzioni rimaste o per priorità(di default)*/
+int n = 0;/*variabile con la quale il programma capisce che lo scheduler è vuoto*/
+
+/*FUNZIONE MAIN */
+
+int main(void) {
+
+	int autoincremental_task_ID = 0;/*inizializzazione della variabile per l'ID  di una task*/
+	struct T_structure *new_task = NULL;/*puntatore a struttura per la memorizzazione di una nouva task*/
+
+	while (1) {
+		int comando = 0;/*variabile in cui salva il comando da eseguire*/
+		int command = 0;/*variabile in cui salva il comando da eseguire,usato per non permettere altre operazioni esclusa quella  di inserimento e uscita dal programma nel 					caso  in cui la lista dei task sia vuota*/
+		int ID_search = -1;/*variabile che conterrà il l'id incerito da tastiera per cercare il task*/
+
+		if (head != NULL) {/*verifica che la testa sia diversa da 'NULL' condizione in cui lo scheduler è vuoto*/
+			n = 1;
+			print_tasks_list();
+
+		} else {
+			n = 0;
+		}
+
+		if (n == 0) {/* controlla se lo scheduler sia vuoto*/
+
+			do {
+				printf("\n Scegli un'operazione: \n");
+				stampa_menu();
+				printf("Inserire un intero corrispondente alle precedenti:\n");
+				scanf("%1d", &command);/*riceve dal tastiera l'esecuzione che dovrà esser eseguita*/
+				getchar();/*attesa che l'utente inserisca un carattere da tastiera*/
+				if (command == 1) {
+					printf("sono nel new task\n");
+					n = 1;
+					new_task = insert_new_task(autoincremental_task_ID);
+					autoincremental_task_ID += 1; /* new_task non serve più, quindi insert_task può 																	tornare void*/
+
+				} else if (command == 7) {
+					printf("Esco dal programma.\n");
+					exit(1);
+				} else if (command > 1 && command < 7) {
+
+					printf(
+							"operazione non valida, non ci sono task in memoria.\n\n");
+				} else {
+					printf("Inserimento errato. Riprova.\n\n");
+				}
+
+			} while (n != 1);
+
+		} else {
+			printf("\n Scegli un'operazione:\n");
+			stampa_menu();
+			printf("Inserire un intero corrispondente alle precedenti:\n");
+			scanf("%1d", &comando);/*riceve dal tastiera l'esecuzione che dovrà esser eseguita*/
+			getchar();/*attesa che l'utente inserisca un carattere da tastiera*/
+
+			switch (comando) {
+
+			case 1:
+				new_task = insert_new_task(autoincremental_task_ID);
+				autoincremental_task_ID += 1; /* new_task non serve più, quindi insert_task può tornare void*/
+				break;
+
+			case 2:
+				execute_tail();
+				break;
+
+			case 3:
+				printf("Inserire l'ID del task da eseguire.\n");
+				scanf("%d", &ID_search);
+				execute_by_ID(ID_search);
+				break;
+
+			case 4:
+				printf("Inserire l'ID del task da eliminare.\n");
+				scanf("%d", &ID_search);
+				delete_by_ID(ID_search);
+				break;
+
+			case 5:
+				printf(
+						"Inserire l'ID del task del quale si desidera cambiare la priorita'.\n");
+				scanf("%d", &ID_search);
+				change_priority_by_ID(ID_search);
+				break;
+
+			case 6:
+				switch_scheduling();
+				break;
+
+			case 7:
+				printf("Esco dal programma.\n");
+				exit(1);
+				break;
+			default:
+				printf("Inserimento errato. Riprova.\n");
+			}
+		}
+	}
+
+}
+
+/*FUNZIONE DI STAMPA MENÙ*/
+/*visualizza quali sono le operazioni che sono consentite */
+int stampa_menu() {
+
+	printf(
+			"1 = Inserimento nuovo task\n2 = Esecuzione task in coda\n3 = Esecuzione task con ID\n4 = Eliminazione task con ID\n5 = Modifica della priorita' task con ID\n6 = Cambiamento politica di scheduling\n7 = Uscita dal programma.\n\n");
+	return 0;
+}
+
+/*FUNZIONE CHE PRESI 3 VALORE ESEGUE LO SWITCH PER ORDINARLI IN BASE AL TIPO DI ORDINAMENTO*/
+
+void switch_two(LIST a, LIST b, LIST c) {
+
+	if (a == head && b == a) {/*verifico se l'elemento in  testa è il più piccolo, in caso negativo esegue lo switch tra i primi due task */
+
+		/*esegue l'effettivo spostamento dei task per metterli in ordine, aggiornando i puntatori dei task */
+		LIST x = a;
+		LIST y = a->next;
+		LIST z = a->next->next;
+
+		a = y;
+		a->next = x;
+		a->next->next = z;
+
+		head = a;
+		newhead = head;
+		tail = a->next;
+
+	} else if (a == head && b != a) {/*verifico se l'elemento in  testa è il più piccolo, in caso negativo esegue lo switch tra la testa e l'elemento individuato più piccolo */
+
+		/*esegue l'effettivo spostamento dei task per metterli in ordine, aggiornando i puntatori dei task */
+		LIST x = b;
+		LIST t = a;
+
+		LIST y = b->next;
+		LIST z = b->next->next;
+
+		a = y;
+		a->next = t;
+
+		head = a;
+		newhead = head;
+		tail = x;
+		tail->next = z;
+
+	} else if (a != head && a == b) {/*quando la lista contiene già alcuni elementi in ordine, l'ordinamento continuerà dall'elemento successivo (all'ultimo, che è già nella 						posizione finale), quindi l'elemento precedente corrisponde all'elemento puntato*/
+
+		/*esegue l'effettivo spostamento dei task per metterli in ordine, aggiornando i puntatori dei task */
+		LIST x = a;
+		LIST y = a->next;
+		LIST z = a->next->next;
+
+		a = y;
+		a->next = x;
+		a->next->next = z;
+		c->next = a;
+		tail = a->next;
+
+	} else if (a != head && a != b) {/*quando la testa contiene già l'elemento più piccolo/maggiore, l'ordinamento inizia da un task successivo a quello iniziale*/
+
+		/*esegue l'effettivo spostamento dei task per metterli in ordine, aggiornando i puntatori dei task */
+		LIST x = a;
+		LIST y = b->next;
+		LIST z = b->next->next;
+
+		a = y;
+		a->next = c->next;
+		b->next = z;
+		c->next = a;
+		tail = b;
+
+	}
+
+}
+/*FUNIZONE CHE ORDINA I TASK IN BASE AL NUMERO DI ESECUZIONI RIMASTE IN MODO CRESCENTE  */
+
+int minimo_execution(LIST point, LIST precPoint) {
+	LIST cont1 = point; /* puntatore d'appoggio dal quale iniziare l'ordinamento e che scorre la lista, =cont3*/
+	LIST cont2 = point->next; /* puntatore d'appoggio al successivo con il quale effettuare il controllo*/
+	LIST cont5 = precPoint; /*puntatore fisso all'inizio della struttura, =cont4*/
+
+	LIST prec = point; /* puntatore per elemento precedente, usate per non modificare la struttura della lista*/
+
+	int min = point->execution; /* assegnazione ad una variabile, l'esecuzione dell'elemento puntato, il possibile elemento con priorità minima*/
+	LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+
+	int c = 0; /* contatore spostamenti, che individua se ci deve effettuare uno spostamento tra i task*/
+	int minore = min;/*variabile d'appoggio, assegna il minimo numero di esecuzioni (burst) del task*/
+
+	/*ciclo che controlla se c'e un elemento successivo a quello puntato attualmente*/
+	while (cont2 != NULL) {
+		/*controllo se il numero delle esecuzioni del task successivo è minore al valore min*/
+		if (cont2->execution <= min) {
+
+			prec = cont1;/*assegno a prec il task puntato da cont1*/
+
+			min = cont2->execution;/*assegno a min il nuovo numero d'esecuzione minore del task puntato dal puntatore della lista cont2*/
+
+			succ = cont2->next;/*assegno al succ il task successivo a quello puntato da cont2*/
+
+			c = c + 1; /*incremento il contatore degli spostamento poichè ho eseguito lo spostamento*/
+
+		}
+		cont1 = cont2; /* Puntatore al possibile precedente del minimo*/
+		cont2 = cont2->next; /* Puntatore al possibile futuro minimo*/
+	}
+
+	if (c != 0 && min != minore) {/*se è stato riscontrato uno spostamento e il minimo ritrovato è diverso da quello della testa, si chiama la procedura di switch tra la testa da dove iniziare l'ordinamento (point), elemento precedente al minimo(prec), puntatore della struttura dalla quale si inizia l'ordinamento(cont5)*/
+		switch_two(point, prec, cont5);
+		return 1;
+	} else if (c != 0 && point->ID < prec->next->ID) {/*in caso ci sono due task con uno stesso numero di esecuzioni rimaste, si effettua lo switch controllando l'id del task*/
+		switch_two(point, prec, cont5);
+		return 1;
+	}
+
+	return 0;
+}
+
+/*FUNZIONE CHE ORDINA IN BASE ALLA PRIORITÀ MASSIMA*/
+
+int massima_priority(LIST point, LIST precPoint) {
+
+	LIST cont1 = point; /* puntatore d'appoggio dal quale iniziare l'ordinamento e che scorre la lista, =cont3*/
+	LIST cont2 = point->next; /* puntatore d'appoggio al successivo con il quale effettuare il controllo*/
+	LIST cont5 = precPoint; /*puntatore fisso all'inizio della struttura, =cont4*/
+
+	LIST prec = point; /* puntatore per elemento precedente, usate per non modificare la struttura della lista*/
+
+	int max = point->priority; /* assegnazione ad una variabile, la priorità dell'elemento puntato, il possibile elemento con priorità massima*/
+	LIST succ = point->next; /* puntatore per l'elemento successivo, usate per non modificare la struttura della lista*/
+
+	int c = 0; /* contatore spostamenti, che individua se ci deve effettuare uno spostamento tra i task*/
+	int massimo = max;/*variabile d'appoggio, contiene la priorità del primo elemento*/
+
+	while (cont2 != NULL) {/* controlla che la lista abbia altri task*/
+
+		if (cont2->priority >= max) {/*controlla se la priorità dell'elemento successivo è maggiore di quello precedente, in caso affermativo effettua la scambio dei valori 							d'appoggio per il futuro switch, altrimenti lascia tutto invariato*/
+
+			prec = cont1;
+
+			max = cont2->priority;
+
+			succ = cont2->next;
+
+			c = c + 1;/*notifico che si effettuerà uno switch*/
+
+		}
+		cont1 = cont2; /* Puntatore al possibile precedente del massimo*/
+		cont2 = cont2->next; /* Puntatore al possibile futuro massimo*/
+	}
+
+	if (c != 0 && max != massimo) {/*se è stato riscontrato uno spostamento e il massimo ritrovato è diverso da quello della testa, si chiama la procedura di switch tra la testa da dove iniziare l'ordinamento (point), elemento precedente al massimo(prec), puntatore della struttura dalla quale si inizia l'ordinamento(cont5)*/
+		switch_two(point, prec, cont5);
+		return 1;
+	} else if (c != 0 && point->ID < prec->next->ID) {/*in caso due priorità hanno lo stesso valore, si effettua lo switch controllando l'id dei task*/
+		switch_two(point, prec, cont5);
+		return 1;
+	}
+
+	return 0;
+}
+
+//FUNZIONE CHE ORDINA LA LISTA DEI TASK
+
+void ordinamento(struct T_structure *head, int sch) {
+
+	int control = 0;/* flag che individua eventuali switch*/
+	LIST cont3 = head; /* puntatore scorrevole della lista */
+	LIST cont4 = head; /* utilizzato come puntatore alla testa della lista*/
+
+	if (sch == 0) { /*ordinamento priorità = false*/
+		printf("\nORDINAMENTO PER PRIORITA'\n");
+
+		while (cont3 != NULL) {/*controlla se la lista dei task ha altri elementi*/
+
+			control = massima_priority(cont3, cont4); /* chiamata alla funzione massima priorità, e passa i valori da confrontare*/
+
+			if (control != 0 && newhead != NULL) { /*controlla se la testa ha subito modifiche*/
+				cont4 = newhead; /* assegno la nuova head e faccio ripartire il ciclio dalla testa*/
+				cont3 = newhead;/* assegno la nuova head e faccio ripartire il ciclio dalla testa*/
+			} else {
+				/* se non si è verificato lo switch, passa agli elementi successivi */
+				cont4 = cont3;
+				cont3 = cont3->next;
+			}
+
+		}
+
+		tail = cont4; /* cont4 è l'ultimo elemento prima di null quindi è sicuramente la coda, poichè cont4 punterà ad un elemento null*/
+
+	} else { /*ordinamento esecuzioni = true*/
+		printf("\nORDINAMENTO PER ESECUZIONI'\n");
+
+		while (cont3 != NULL) {/*controlla se la lista dei task ha altri elementi*/
+
+			control = minimo_execution(cont3, cont4); /* chiamata alla funzione minore numero di esecuzioni rimaste e passa i valori da confrontare*/
+
+			if (control != 0) {/*controlla se ci sono state delle modifiche*/
+				cont4 = newhead; /* assegno la nuova head e faccio ripartire il ciclio dalla testa*/
+				cont3 = newhead;/* assegno la nuova head e faccio ripartire il ciclio dalla testa*/
+			} else {
+				/* se non si è verificato lo switch, passa agli elementi successivi */
+				cont4 = cont3;
+				cont3 = cont3->next;
+			}
+		}
+
+		tail = cont4;/* cont4 è l'ultimo elemento prima di null quindi è sicuramente la coda, poichè cont4 punterà ad un elemento null*/
+	}
+}
+
+/* FUNZIONE CHE CONSENTE DI IMMETTERE I DATI DEL NUOVO TASK DA ESEGUIRE */
+
+LIST insert_new_task(int x) {
+
+	struct T_structure *new_task = malloc(sizeof(T_structure));/*puntatore a struttura che punta ad una allocazione di memoria*/
+
+	/*riempimento della memoria allocata per il nuovo task con i valore presi da tastiera e l'ID*/
+	new_task->ID = x;
+	printf("inserire nome task (massimo 8 caratteri):\n");
+	scanf("%8s", new_task->name);
+
+	while (getchar() != '\n')
+		;
+
+	printf("inserire priorita' task (compreso tra 0 e 9):\n");
+	scanf("%1d", &new_task->priority);
+
+	while (getchar() != '\n')
+		;
+
+	do {
+		printf("inserire numero di esecuzioni (compreso tra 1 e 99):\n");
+		scanf("%2d", &new_task->execution);
+
+		while (getchar() != '\n')
+			;
+
+	} while (new_task->execution < 1);
+
+	new_task->next = NULL; /* assegna al nuovo task un puntatore che punta a nulla, poichè il task verrà inserita in fonda alla lista dei task*/
+
+	if (head == NULL) {/*controlla se la testa sia vuota, serve a identificare se è il primo task inserito, in caso affermativo assegna sia alla testa che alla coda il 						nuovo task creato*/
+		head = new_task;
+		tail = head;
+	} else {
+		tail->next = new_task;/*crea il puntatore al task in coda con il nuovo task inserito nello scheduler*/
+		tail = new_task;/*inserisce il task appena creata in coda nello scheduler*/
+	}
+
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+
+/*FUNZIONE CHE INDIVIDUA L'ID  DEL TASK RICERCATO DALLA LISTA DEI TASK DELLO SCHEDULER */
+
+LIST find_task_by_ID(int inner_ID) {
+
+	struct T_structure *find_struct = head;/*punatore alla struttura che punta alla testa dello scheduler*/
+
+	/*cicla tutta la lista dei task contenuti nello scheduler fino a trovare l'ID ricercato, in caso di risposta negativa restituisce un messaggio d'errore*/
+	do {
+
+		if (find_struct->ID == inner_ID) {/*verifica che l'ID del task inserito da tastiera corrisponde a quello in testa alla lisat del task*/
+			printf("L'ID corrisponde al task %s\n\n", find_struct->name);
+			return find_struct;/*restituisco la struttura del task con l'ID ricercato*/
+		} else if (find_struct->ID != inner_ID && find_struct->next == NULL) {/*se l'ID non è presente nella lista dei task, risponde con un messaggio di errore*/
+			printf("Non esiste un task con ID %d\n", inner_ID);
+
+			return NULL;
+
+		} else {
+			find_struct = find_struct->next;/* passaggio al successivo elemento*/
+		}
+
+	} while (find_struct != NULL);
+
+}
+
+/*FUNZIONE DI ELIMINAZIONE TASK TRAMITE ID DA TASTIERA*/
+
+void delete_by_ID(int x) {
+
+	struct T_structure *tmp_struct = NULL;/*inizializza un puntatore a struttura che verrà utilizzato per il task con l'ID selezionato*/
+	struct T_structure *struct_pointer = head;/*viene assegnato al puntatore il task in testa dello scheduler*/
+	printf("Elimino il task con ID %d.\n", x);
+	tmp_struct = find_task_by_ID(x);/*viene assegnato al puntatore l'ID ottenuto dalla funzione find_task_by_ID*/
+
+	if (tmp_struct != NULL) {/*controlla se è stato trovato l'ID ricercato*/
+
+		if (tmp_struct == head) {/*controlla che l'ID da eliminare corrisponde alla testa*/
+			if (tmp_struct == tail) {/*controlla se l'ID corrisponde anche alla coda e quindi imposta sia la testa ceh la coda a null in quanto la lista dei task 							diventerà vuota*/
+				head = NULL;
+				tail = NULL;
+			} else if (tmp_struct->next == tail) {/*controlla se l'elemento successivo all'elemento da eliminare (testa),corrisponde all'elemento in coda, in caso affermativo la coda corrisponde alla testa( è rimasto un solo task), altrimenti imposta come testa l'elemento seccessivo all'elemento eliminato*/
+				head = tail;
+			} else {
+				head = head->next;
+			}
+		} else {/*caso in cui l'elemento da eliminare non fosse quello in testa*/
+			while (struct_pointer->next != tmp_struct) {/*scorrimento della lista fino a che l'elemento è diverso dall'elemento da eliminare*/
+				struct_pointer = struct_pointer->next;/*passa all'elemento successivo*/
+
+			}
+			if (tmp_struct != tail) {/*verifica che l'elemento da eliminare sia diverso dall'elemento in coda, in caso negativo l'elemento precedente punterà a nulla e 							diventerà la nuova coda dei task*/
+				struct_pointer->next = tmp_struct->next;
+			} else {
+				struct_pointer->next = NULL;
+				tail = struct_pointer;
+			}
+
+		}
+	}
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+
+/*FUNZIONE CHE ESEGUE IL TASK IN CODA*/
+
+void execute_tail() {
+
+	if (tail->execution == 1) {/*controlla se il numero delle esecuzioni del task in coda è uguale a 1, ciò porta all'eliminazione di quest'ultima*/
+		int x = (*tail).ID;/*assegnazione ad una variabile l'ID del task in coda */
+		printf(
+				"Al task in coda rimane una sola esecuzione, dopo la quale sarà eliminato.\n");
+		delete_by_ID(x);/*passa alla funzione di eliminazione l'ID  del task in coda */
+	} else {
+		tail->execution -= 1;/*diminuzione del numero di esecuzioni rimaste dal task in coda*/
+
+	}
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+
+//* FUNZIONE CHE ESEGUE IL TASK TRAMITE LA SCELTA DELL'ID*/
+
+void execute_by_ID(int x) {
+
+	struct T_structure *tmp_struct = NULL;/*inizializza un puntatore a struttura che verrà utilizzato per il task con l'ID selezionato*/
+	tmp_struct = find_task_by_ID(x);/*viene assegnato al puntatore l'ID ottenuto dalla funzione find_task_by_ID*/
+
+	if (tmp_struct != NULL) {
+		printf("Eseguo task con ID %d.\n", x);
+		if (tmp_struct->execution == 1) {/*controllo che verifica se è rimasta una sola esecuzione*/
+			printf(
+					"Al task in coda rimane una sola esecuzione, dopo la quale sarà eliminato.\n");
+			delete_by_ID(x);/*passa alla funzione di eliminazione l'ID del task scelto*/
+		} else {
+			tmp_struct->execution -= 1;/*diminuzione del numero di esecuzione rimaste dal task scelto */
+		}
+	}
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+
+//FUNZIONE CHE CAMBIA LA PRIORITÀ DI UN TASK TRAMITE LA SCELTA DI UN ID
+
+void change_priority_by_ID(int x) {
+
+	struct T_structure *tmp_struct = NULL;/*inizializzo un puntatore a struttura che verrà utilizzato per il task con l'ID selezionato*/
+	tmp_struct = find_task_by_ID(x);/*viene assegnato al puntatore l'ID ottenuto dalla funzione find_task_by_ID*/
+
+	if (tmp_struct != NULL) {
+		printf("Inserire nuova priorita':\n");
+		scanf("%1d", &tmp_struct->priority);/*riceve da tastiera la nuova priorità e la sostituisce alla vecchia*/
+
+		while (getchar() != '\n')
+			;
+
+	}
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+/* FUNIZONE PER CAMBIO DI POLITICA DI SCHEDULER*/
+/* Tramite l'assegnazione di un valore compreso tra 0 e 1 questa funzione mi permette di passare da un ordinamento per priorità (0) a un ordinamento per rimanenze (1)*/
+
+void switch_scheduling() {
+
+	printf("Cambio politica di scheduling.\n");
+	if (sch == 1) {
+		sch = 0;
+	} else {
+		sch = 1;
+	}
+	ordinamento(head, sch); /*chiama la funzione d'ordinamento mandandogli come parametro, la testa e il tipo d'ordinamento (per priorità o rimanenze )*/
+}
+
+/*FUNZIONE CHE STAMPA LA LISTA DEI TASK ALL'INTERNO DELLO SCHEDULER*/
+
+void print_tasks_list() {
+	struct T_structure *pointer = head;/*crea un puntatore a struttura che punta alla testa  */
+	printf(
+			"_________________________________________________________________________________________\n");
+	printf("|	ID 	|	NOME	|	PRIORITA'	|	ESECUZIONI	|\n");
+
+	while (pointer != NULL) {/**/
+		printf(
+				"_________________________________________________________________________________________\n");
+		printf("|	%d	|	%s	|	   %d  		|	    %d		|\n", pointer->ID, pointer->name,
+				pointer->priority, pointer->execution);
+		pointer = pointer->next;/*sposta il puntatore al task successivo*/
+	}
+
+}
